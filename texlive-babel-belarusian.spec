@@ -1,6 +1,6 @@
 Name:		texlive-babel-belarusian
 Version:	49022
-Release:	1
+Release:	2
 Summary:	Babel support for Belarusian
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/babel-belarusian
