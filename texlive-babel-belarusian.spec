@@ -3,7 +3,7 @@ Version:	49022
 Release:	2
 Summary:	Babel support for Belarusian
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/babel-belarusian
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-belarusian
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.doc.r%{version}.tar.xz
