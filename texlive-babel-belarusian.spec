@@ -1,39 +1,24 @@
-Name:		texlive-babel-belarusian
-Version:	49022
-Release:	2
+%global tl_name babel-belarusian
+%global tl_revision 49022
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.5
+Release:	%{tl_revision}.1
 Summary:	Babel support for Belarusian
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-belarusian
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-contrib/belarusian
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-belarusian.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides support for use of Babel in documents
-written in Belarusian.
+The package provides support for use of Babel in documents written in
+Belarusian.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/generic/babel-belarusian
-%{_texmfdistdir}/tex/generic/babel-belarusian
-%doc %{_texmfdistdir}/doc/generic/babel-belarusian
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
